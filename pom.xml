@@ -8,5 +8,29 @@
     <artifactId>game</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.swagger</groupId>
+                <artifactId>swaggerhub-maven-plugin</artifactId>
+                <version>1.0.2</version>
+                <executions>
+                    <execution>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>download</goal>
+                        </goals>
+                        <configuration>
+                            <api>game</api>
+                            <owner>piecePicker</owner>
+                            <version>1.0.1</version>
+                            <outputFile>target/piecePicker.yaml</outputFile>
+                            <format>yaml</format>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
